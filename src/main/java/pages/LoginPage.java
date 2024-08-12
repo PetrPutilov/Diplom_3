@@ -2,12 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
-    private final WebDriver driver;
+public class LoginPage extends BasePage {
 
     private final By enterButton = By.xpath(".//button[text()='Войти']");
     private final By mailInput = By.xpath(".//label[text()='Email']/parent::div/input");
@@ -15,7 +13,7 @@ public class LoginPage {
     private final By registerLink = By.xpath(".//a[text()='Зарегистрироваться']");
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver, "/login");
     }
 
     public void waitForLoadLoginPage() {
@@ -23,12 +21,18 @@ public class LoginPage {
                 .until(ExpectedConditions.visibilityOfElementLocated(enterButton));
     }
 
+    public void login(String email, String password) {
+        fillMailInput(email);
+        fillPasswordInput(password);
+        clickEnterButton();
+    }
+
     public void clickEnterButton() {
-        driver.findElement(enterButton).click();
+        clickElement(enterButton);
     }
 
     public void clickRegisterLink() {
-        driver.findElement(registerLink).click();
+        clickElement(registerLink);
     }
 
     public void fillMailInput(String txt) {
@@ -39,9 +43,4 @@ public class LoginPage {
         fillInput(passwordInput, txt);
     }
 
-    private void fillInput(By locator, String txt) {
-        WebElement passwordInputElement = driver.findElement(locator);
-        passwordInputElement.clear();
-        passwordInputElement.sendKeys(txt);
-    }
 }

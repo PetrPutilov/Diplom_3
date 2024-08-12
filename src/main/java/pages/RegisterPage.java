@@ -2,21 +2,20 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class RegisterPage {
-    private final WebDriver driver;
+public class RegisterPage extends BasePage {
 
     private final By registerButton = By.xpath(".//button[text()='Зарегистрироваться']");
+    private final By enterAccountLink = By.xpath(".//a[text()='Войти']");
     private final By nameInput = By.xpath(".//label[text()='Имя']/parent::div/input");
     private final By mailInput = By.xpath(".//label[text()='Email']/parent::div/input");
     private final By passwordInput = By.xpath(".//input[@type='password']");
     private final By incorrectPasswordMessage = By.xpath(".//p[text()='Некорректный пароль']");
 
     public RegisterPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver, "/register");
     }
 
     public void waitForLoadRegisterPage() {
@@ -30,7 +29,11 @@ public class RegisterPage {
     }
 
     public void clickRegisterButton() {
-        driver.findElement(registerButton).click();
+        clickElement(registerButton);
+    }
+
+    public void clickEnterAccount() {
+        clickElement(enterAccountLink);
     }
 
     public void fillNameInput(String txt) {
@@ -43,11 +46,5 @@ public class RegisterPage {
 
     public void fillPasswordInput(String txt) {
         fillInput(passwordInput, txt);
-    }
-
-    private void fillInput(By locator, String txt) {
-        WebElement passwordInputElement = driver.findElement(locator);
-        passwordInputElement.clear();
-        passwordInputElement.sendKeys(txt);
     }
 }
