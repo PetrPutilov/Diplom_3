@@ -6,7 +6,7 @@ import pages.LoginPage;
 import pages.MainPage;
 import pages.UserProfilePage;
 
-public class ConstructorTests extends BaseUITest{
+public class FollowToConstructorTests extends BaseUITest{
     @Test
     @DisplayName("follow to constructor page from user profile page using 'Конструктор' button")
     public void goToConstructorFromUserProfilePageUsingConstructorButton(){

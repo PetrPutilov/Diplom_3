@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -33,4 +34,23 @@ public class MainPage extends BasePage {
         clickElement(userProfileButton);
     }
 
+    public void clickTabByValue(String text){
+        //в приложении есть косяк: при клике на пункт меню конструктора "Булки"
+        // клик получает не отдельный таб, а весь таббар, поэтому код немного костыльный
+        // на работоспособности не отражается, но тестировать менее удобно
+        String xpath;
+        if ("Булки".equals(text)){
+            xpath = String.format(".//span[text()='%s']/parent::div/parent::div",text);
+        } else {
+            xpath = String.format(".//span[text()='%s']/parent::*", text);
+        }
+        WebElement element = driver.findElement(By.xpath(xpath));
+        element.click();
+    }
+
+    public void waitConstructorTopicVisibleByValue(String text){
+        By elementLocator = By.xpath(String.format(".//h2[text()='%s']", text));
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
+    }
 }
