@@ -16,7 +16,7 @@ public class BaseUITest extends BaseApiTest {
     @Parameterized.Parameters
     public static Object[][] addParametersList() {
         return new Object[][]{
-                {Browser.EDGE},
+                {Browser.YANDEX},
                 {Browser.CHROME},
         };
     }

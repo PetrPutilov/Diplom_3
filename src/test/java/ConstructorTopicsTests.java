@@ -19,9 +19,9 @@ public class ConstructorTopicsTests extends BaseUITest {
                 {"Начинки", Browser.CHROME},
                 {"Соусы", Browser.CHROME},
                 {"Булки", Browser.CHROME},
-                {"Начинки", Browser.EDGE},
-                {"Соусы", Browser.EDGE},
-                {"Булки", Browser.EDGE}
+                {"Начинки", Browser.YANDEX},
+                {"Соусы", Browser.YANDEX},
+                {"Булки", Browser.YANDEX}
         };
     }
 

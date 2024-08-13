@@ -1,6 +1,5 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 
 public class DriverFactory {
     public static WebDriver WebDriver(Browser type)
@@ -8,8 +7,9 @@ public class DriverFactory {
         WebDriver driver = null;
         switch (type)
         {
-            case EDGE:
-                driver = new EdgeDriver();
+            case YANDEX:
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/yandexdriver");
+                driver = new ChromeDriver();
                 break;
             case CHROME:
                 driver = new ChromeDriver();
