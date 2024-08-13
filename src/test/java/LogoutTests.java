@@ -7,6 +7,11 @@ import pages.MainPage;
 import pages.UserProfilePage;
 
 public class LogoutTests extends BaseUITest{
+
+    public LogoutTests(Browser browser) {
+        super(browser);
+    }
+
     @Test
     @DisplayName("logout test")
     public void logOutTest(){

@@ -7,6 +7,11 @@ import pages.MainPage;
 import pages.UserProfilePage;
 
 public class UserProfileTests extends BaseUITest{
+
+    public UserProfileTests(Browser browser) {
+        super(browser);
+    }
+
     @Test
     @DisplayName("follow to user profile page from main page")
     public void goToUserProfilePage(){
