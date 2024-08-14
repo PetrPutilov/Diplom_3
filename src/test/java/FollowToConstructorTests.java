@@ -8,10 +8,6 @@ import pages.UserProfilePage;
 
 public class FollowToConstructorTests extends BaseUITest{
 
-    public FollowToConstructorTests(Browser browser) {
-        super(browser);
-    }
-
     @Test
     @DisplayName("follow to constructor page from user profile page using 'Конструктор' button")
     public void goToConstructorFromUserProfilePageUsingConstructorButton(){

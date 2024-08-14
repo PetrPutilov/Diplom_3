@@ -8,20 +8,16 @@ import pages.MainPage;
 public class ConstructorTopicsTests extends BaseUITest {
     private final String value;
 
-    public ConstructorTopicsTests(String value, Browser browser) {
-        super(browser);
+    public ConstructorTopicsTests(String value) {
         this.value = value;
     }
 
     @Parameterized.Parameters
     public static Object[][] addParametersList() {
         return new Object[][]{
-                {"Начинки", Browser.CHROME},
-                {"Соусы", Browser.CHROME},
-                {"Булки", Browser.CHROME},
-                {"Начинки", Browser.YANDEX},
-                {"Соусы", Browser.YANDEX},
-                {"Булки", Browser.YANDEX}
+                {"Начинки"},
+                {"Соусы"},
+                {"Булки"},
         };
     }
 

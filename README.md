@@ -5,8 +5,11 @@
 | Документация | https://code.s3.yandex.net/qa-automation-engineer/java/cheatsheets/paid-track/diplom/api-documentation.pdf |
 |--------------|------------------------------------------------------------------------------------------------------------|
 |     Примененные технологии         | Java 11, Junit4, Maven, Allure, Selenium                                                                   |
-|     Запуск тестов         | `mvn clean test`                                                                                           |
+|     Запуск тестов         | `mvn clean test -Dbrowser=chrome`  <br/>`mvn clean test -Dbrowser=yandex`                                  |
 |     Дополнительные настройки         | не требуются                                                                                               |
+
+тесты подготовлены для запуска в браузерах Chrome и Yandex.  
+Для запуска необходимо передать переменную окружения "browser" с значением "chrome" либо "yandex" (значение не чувствительно к регистру)
 
 драйвер для yandexbrowser предоставлен в src/test/resources/yandexdriver  
 Для работы chromebrowser необходимо   

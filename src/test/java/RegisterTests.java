@@ -10,9 +10,6 @@ import pages.RegisterPage;
 import static org.hamcrest.Matchers.equalTo;
 
 public class RegisterTests extends BaseUITest {
-    public RegisterTests(Browser browser) {
-        super(browser);
-    }
 
     @Test
     @DisplayName("successful registration test")

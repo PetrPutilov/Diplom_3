@@ -9,10 +9,6 @@ import pages.RestorePasswordPage;
 
 public class EnterAccountTests extends BaseUITest {
 
-    public EnterAccountTests(Browser browser) {
-        super(browser);
-    }
-
     @Test
     @DisplayName("enter account using 'Войти в аккаунт' button on main page")
     public void enterAccountFromMainPage() {
